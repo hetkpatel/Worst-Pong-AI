@@ -16,7 +16,7 @@ class PongGame:
         self.BALL_SIZE = 15
         self.WHITE = (255, 255, 255)
         self.BLACK = (0, 0, 0)
-        self.FPS = 60  # Change to 0 for faster training
+        self.FPS = 0  # Change to 0 for faster training
 
         # Fitness Metrics
         self.left_hit, self.right_hit = 0, 0

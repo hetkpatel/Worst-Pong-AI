@@ -1,4 +1,5 @@
 import neat
+from DiscordReporter import DiscordReporter
 from game import PongGame, Player, MoveChoice
 import pickle
 from enum import Enum
@@ -77,8 +78,8 @@ def run(config_file, mode):
             # p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-4')
             # Add a stdout reporter to show progress in the terminal.
             p.add_reporter(neat.StdOutReporter(True))
-            stats = neat.StatisticsReporter()
-            p.add_reporter(stats)
+            p.add_reporter(DiscordReporter(username="Worst-Pong-AI"))
+            p.add_reporter(neat.StatisticsReporter())
             p.add_reporter(neat.Checkpointer(1, filename_prefix="gen-cp-"))
 
             # Train for up to 10 generations
